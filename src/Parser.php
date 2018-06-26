@@ -131,7 +131,11 @@ class Parser implements IParser
      */
     private function checkFinallyResult(?string $code, ?string $walletNumber, ?float $amount): bool
     {
-        return !is_null($code) && !is_null($walletNumber) && !is_null($amount) && mb_strlen($code) < 11 && ($amount != (int)$amount || mb_strlen($amount) < 11 && mb_strlen($code) !== mb_strlen($amount));
+        return !is_null($code)
+            && !is_null($walletNumber)
+            && !is_null($amount)
+            && mb_strlen($code) < 11
+            && ($amount != (int)$amount || mb_strlen($amount) < 11 && mb_strlen($code) !== mb_strlen($amount));
     }
 
     /**
